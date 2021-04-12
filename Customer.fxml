@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="364.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="customerTable" layoutX="22.0" layoutY="84.0" prefHeight="208.0" prefWidth="244.0">
+        <columns>
+          <TableColumn prefWidth="86.0" text="Customer ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerId" />
+                </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="155.0" text="Customer Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerName" />
+                </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+      <Button fx:id="btnAdd" layoutX="373.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#addCustomer" prefHeight="25.0" prefWidth="55.0" text="Add" />
+      <Button fx:id="btnDelete" layoutX="240.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#deleteCustomer" prefHeight="25.0" prefWidth="55.0" text="Delete" />
+      <Button fx:id="btnEdit" layoutX="174.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#editCustomer" prefHeight="25.0" prefWidth="55.0" text="Edit" />
+      <Button fx:id="btnAppointment" layoutX="39.0" layoutY="311.0" mnemonicParsing="false" onMouseClicked="#customerAppointment" prefHeight="38.0" prefWidth="105.0" text="Appointment" />
+      <Label layoutX="54.0" layoutY="33.0" text="Customers">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="288.0" layoutY="81.0" prefHeight="208.0" prefWidth="200.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="99.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="101.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="124.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="159.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="17.0" prefWidth="43.0" text="Name: " />
+            <Label text="Address:" GridPane.rowIndex="1" />
+            <Label text="Address Line 2:" GridPane.rowIndex="2" />
+            <Label text="City: " GridPane.rowIndex="3" />
+            <Label text="Country:" GridPane.rowIndex="4" />
+            <Label text="Postal Code:" GridPane.rowIndex="5" />
+            <Label text="Phone: " GridPane.rowIndex="6" />
+            <TextField fx:id="nameField" GridPane.columnIndex="1" />
+            <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="addressField2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="countryField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="postalField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Button fx:id="btnUpdate" disable="true" layoutX="439.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#updateCustomer" prefHeight="25.0" prefWidth="55.0" text="Update" />
+      <Button layoutX="468.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#toMain" text="Home" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="520.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="AppointmentTable" layoutX="34.0" layoutY="57.0" prefHeight="139.0" prefWidth="414.0">
+        <columns>
+          <TableColumn prefWidth="55.0" text="Date">
+              <cellValueFactory>
+                    <PropertyValueFactory property="date" />
+                </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="65.0" text="Time">
+              <cellValueFactory>
+                    <PropertyValueFactory property="time" />
+                </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="71.0" text="Type">
+                <cellValueFactory>
+                    <PropertyValueFactory property="type" />
+                </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="73.0" text="Location">
+                <cellValueFactory>
+                    <PropertyValueFactory property="location" />
+                </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="75.0" text="Contact">
+                <cellValueFactory>
+                    <PropertyValueFactory property="contact" />
+                </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="75.0" text="Customer ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerId" />
+                </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+      <Label layoutX="41.0" layoutY="22.0" text="Upcoming appointments">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <ComboBox fx:id="bxYear" layoutX="34.0" layoutY="236.0" prefHeight="25.0" prefWidth="75.0" promptText="Year" />
+      <ComboBox fx:id="bxMonth" layoutX="109.0" layoutY="236.0" prefWidth="75.0" promptText="Month" />
+      <ComboBox fx:id="bxDay" layoutX="183.0" layoutY="236.0" prefWidth="75.0" promptText="Day" />
+      <ComboBox fx:id="bxHour" layoutX="258.0" layoutY="236.0" prefWidth="75.0" promptText="Hour" />
+      <ComboBox fx:id="bxMinute" layoutX="333.0" layoutY="236.0" prefWidth="75.0" promptText="Minute" />
+      <Label fx:id="newAppt" layoutX="34.0" layoutY="208.0" text="Add Appointment">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Button fx:id="btnConfirm" layoutX="433.0" layoutY="472.0" mnemonicParsing="false" onMouseClicked="#commitChange" prefWidth="75.0" text="Confirm" />
+      <Button fx:id="btnDelete" layoutX="459.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#deleteAppt" prefWidth="75.0" text="Delete" />
+      <Button fx:id="btnEdit" layoutX="459.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#editAppt" prefWidth="75.0" text="Edit" />
+      <TextField fx:id="titleField" layoutX="103.0" layoutY="278.0" />
+      <TextField fx:id="contactField" layoutX="374.0" layoutY="357.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextArea fx:id="descriptionField" layoutX="103.0" layoutY="403.0" prefHeight="94.0" prefWidth="149.0" />
+      <ComboBox fx:id="bxLocation" layoutX="103.0" layoutY="316.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="26.0" layoutY="282.0" prefHeight="17.0" prefWidth="48.0" text="Title:" />
+      <Label layoutX="25.0" layoutY="320.0" text="Location:" />
+      <Label layoutX="296.0" layoutY="361.0" prefHeight="17.0" prefWidth="48.0" text="Contact:" />
+      <Label layoutX="26.0" layoutY="407.0" text="Description:" />
+      <Label layoutX="296.0" layoutY="282.0" text="URL:" />
+      <Label layoutX="292.0" layoutY="320.0" text="Type: " />
+      <Label layoutX="28.0" layoutY="361.0" text="Length: " />
+      <TextField fx:id="typeField" layoutX="374.0" layoutY="316.0" />
+      <TextField fx:id="urlField" layoutX="374.0" layoutY="278.0" />
+      <ComboBox fx:id="bxLength" layoutX="103.0" layoutY="357.0" prefHeight="25.0" prefWidth="149.0" />
+      <RadioButton fx:id="rdMonth" layoutX="464.0" layoutY="57.0" mnemonicParsing="false" text="by Month">
+         <toggleGroup>
+            <ToggleGroup fx:id="filtergroup" />
+         </toggleGroup></RadioButton>
+      <ComboBox fx:id="bxMonthSort" layoutX="553.0" layoutY="53.0" prefHeight="25.0" prefWidth="75.0" />
+      <ComboBox fx:id="bxWeekSort" layoutX="553.0" layoutY="92.0" prefHeight="25.0" prefWidth="75.0" />
+      <RadioButton fx:id="rdWeek" layoutX="463.0" layoutY="96.0" mnemonicParsing="false" text="by Week" toggleGroup="$filtergroup" />
+      <Label layoutX="294.0" layoutY="399.0" text="Customer ID:" />
+      <TextField fx:id="customerField" layoutX="374.0" layoutY="395.0" />
+      <Button layoutX="565.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#toMain" text="Home" />
+      <Button fx:id="btnFilter" layoutX="553.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#filter" prefHeight="25.0" prefWidth="75.0" text="Filter" />
+      <Button fx:id="btnCancel" disable="true" layoutX="527.0" layoutY="472.0" mnemonicParsing="false" onMouseClicked="#cancel" prefWidth="75.0" text="Cancel" />
+   </children>
+</AnchorPane>
